@@ -1,0 +1,22 @@
+services:
+    web:
+        # Use a Dockerfile located in the ./build directory to build the 'web' service
+        build: ./build 
+
+        volumes:
+        # Mount the 'source-code' volume to /var/www/html in the container
+        # This allows sharing code between host and container and persists web application files
+            - source-code:/var/www/html
+        
+        # Mount the 'userdata' volume to /root in the container
+        # Useful for persisting user-specific data or configurations
+            - userdata:/root
+        ports:
+            - "80:80" # Map host port 80 to container port 80
+        hostname: arena-admin
+    
+# Define named volumes
+volumes: 
+    source-code:
+    userdata:
+
