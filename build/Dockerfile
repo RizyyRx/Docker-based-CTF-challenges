@@ -1,5 +1,5 @@
 # Use the Ubuntu 20.04 base image
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Define timezone environment variable
 ENV TZ=Asia/Kolkata
@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y
 
 # Install necessary applications and services
-RUN apt install htop apache2 php libapache2-mod-php php-mysql git nano -y
+RUN apt install -y htop apache2 php libapache2-mod-php php-mysql git nano
 
 # Install locales and generate locale
 RUN apt install -y locales locales-all
