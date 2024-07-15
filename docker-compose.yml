@@ -3,7 +3,7 @@ services:
         build: ./build  # Use a Dockerfile located in the ./build directory to build the 'web' service
 
         volumes:
-            - source-code:/var/www/html     # Mount the 'source-code' volume to /var/www/html in the container
+            - ./build/source-code:/var/www/html     # Mount the 'source-code' dir to /var/www/html in the container
             - userdata:/root   # Mount the 'userdata' volume to /root in the container
         ports:
             - "80:80" # Map host port 80 to container port 80
@@ -11,6 +11,5 @@ services:
     
 # Define named volumes
 volumes: 
-    source-code:
     userdata:
 

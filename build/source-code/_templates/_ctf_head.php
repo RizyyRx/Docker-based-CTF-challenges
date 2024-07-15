@@ -3,12 +3,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="author" content="Rizwan">
   <meta name="generator" content="Hugo 0.122.0">
   <title>CTF Arena</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 
   <style>
     .bd-placeholder-img {
@@ -112,13 +114,30 @@
       /* Full width footer */
     }
 
-    .bg-black {
-      background-color: black;
+    .bg-grey {
+      background-color: #272424;
       height: 100vh;
       /* Adjust as needed */
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+    }
+
+    .grid-block {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 30px 10px;
+      /* Increase padding for vertical size */
+      margin: 10px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 150px;
+      /* Explicit height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 
