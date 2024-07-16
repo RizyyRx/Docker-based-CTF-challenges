@@ -18,7 +18,7 @@
                         <a class="nav-link text-white" href="gamerz_arena_players.php">Players</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">News</a>
+                        <a class="nav-link text-white" href="gamerz_arena_news.php">News</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Discussions</a>
