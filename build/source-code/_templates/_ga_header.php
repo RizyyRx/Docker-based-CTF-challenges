@@ -9,10 +9,10 @@
                 <a class="navbar-brand col-lg-3 me-0 text-white" href="#">Gamerz Arena</a>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-white" aria-current="page" href="gamerz_arena_index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Accessories</a>
+                        <a class="nav-link text-white" href="gamerz_arena_accessories.php">Accessories</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Players</a>
