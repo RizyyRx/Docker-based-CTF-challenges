@@ -106,8 +106,10 @@
             padding-top: 1rem;
             padding-bottom: 1rem;
             background-color: #f8f9fa;
-            margin-top: auto; /* Push footer to the bottom */
-            width: 100%; /* Full width footer */
+            margin-top: auto;
+            /* Push footer to the bottom */
+            width: 100%;
+            /* Full width footer */
         }
 
         .bg-grey {
@@ -139,8 +141,28 @@
         .bg-violet {
             background-color: #7A0BC7 !important;
         }
+
         .bg-lightgrey {
             background-color: #52514E !important;
+        }
+
+        .dropdown-arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid white;
+            /* Adjust color as needed */
+            vertical-align: middle;
+            margin-left: 5px;
+            /* Adjust spacing */
+        }
+
+        .center-accordion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 

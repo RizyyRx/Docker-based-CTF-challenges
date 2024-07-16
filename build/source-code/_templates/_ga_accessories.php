@@ -54,7 +54,7 @@ if (isset($_POST['query'])) { ?>
     <div class="container py-3" bis_skin_checked="1">
         <div class="p-3 text-center bg-body-tertiary" bis_skin_checked="1">
             <div class="container py-3" bis_skin_checked="1">
-                <h1 class="text-body-emphasis">Gaming Accessories</h1>
+                <h1 class="text-body-emphasis">Gaming Accessories Info</h1>
                 <p class="col-lg-8 mx-auto lead">
                     With great Accessories, comes great victories
                 </p>
