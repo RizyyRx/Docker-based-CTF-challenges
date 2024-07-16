@@ -1,10 +1,26 @@
 <main>
     <div class="display-4 fw-bold text-white text-center pt-4" style="font-family: 'Press Start 2P', cursive;">Gamerz Arena</div>
 
-    <div class="d-flex justify-content-center py-5">
-        <a href="login.php" class="btn btn-primary mx-2">Login</a>
-        <a href="signup.php" class="btn btn-secondary mx-2">Sign Up</a>
-    </div>
+    <?php
+    if (Session::isset_session('isLoggedin')) {
+        if (Session::get('isLoggedin') == 'true') {
+            $username = Session::get('username'); ?>
+            <div class="container pt-4">
+                <div class="text-center" style="color: white;">
+                    <h1 class="display-4">Welcome <?php echo htmlspecialchars($username); ?></h1>                 
+                </div>
+            </div>
+        <?php
+        }
+    } else { ?>
+        <div class="d-flex justify-content-center py-5">
+            <a href="login.php" class="btn btn-primary mx-2">Login</a>
+            <a href="signup.php" class="btn btn-secondary mx-2">Sign Up</a>
+        </div>
+    <?php
+    }
+    ?>
+
 
 
     <div class="container-fluid d-flex justify-content-center pb-4">

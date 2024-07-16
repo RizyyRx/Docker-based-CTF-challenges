@@ -8,3 +8,4 @@ service apache2 start
 
 # Keep the script running (keep the container running)
 tail -f /dev/null
+

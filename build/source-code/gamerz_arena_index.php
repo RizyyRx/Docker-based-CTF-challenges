@@ -1,4 +1,5 @@
 <?php
+ob_start();//start output buffering, to handle headers properly
 include "libs/load.php";
 ?>
 <!doctype html>
@@ -17,3 +18,4 @@ include "libs/load.php";
 </body>
 
 </html>
+<?php ob_end_flush();//flushes output buffer, handles headers properly?>

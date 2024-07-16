@@ -8,8 +8,22 @@ services:
         ports:
             - "80:80" # Map host port 80 to container port 80
         hostname: arena-admin
-    
+    mysql:
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: example
+        volumes:
+            - mysql_data:/var/lib/mysql
+            - ./build/sql:/docker-entrypoint-initdb.d
+        ports:
+            - "3306:3306"
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
 # Define named volumes
 volumes: 
     userdata:
-
+    mysql_data:
