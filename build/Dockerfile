@@ -29,6 +29,11 @@ COPY scripts/. /var/scripts/
 # Make the entry.sh script executable
 RUN chmod +x /var/scripts/entry.sh
 
+# Set proper ownership and permissions for uploads directory
+RUN chown -R www-data:www-data /var/www/html/assets/uploads
+RUN chmod -R 755 /var/www/html/assets/uploads
+
+
 # Expose port 80 to allow external access
 EXPOSE 80
 

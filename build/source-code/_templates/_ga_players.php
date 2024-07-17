@@ -14,7 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             }
         } else {
-            print("login to make comments");
+            echo '
+            <div class="modal show" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="display: block; background: rgba(0, 0, 0, 0.5);">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalLabel">Login Required</h5>
+                        </div>
+                        <div class="modal-body">
+                            Login to make comments.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" onclick="window.location.href=\'login.php\'">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>';
         }
     }
 
@@ -112,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     // Check if there are comments to display
                                     if (!empty($comments)) {
                                         // Reverse array to display latest comments first
-                                        $comments = array_reverse($comments);
+                                        //$comments = array_reverse($comments);
                                         foreach ($comments as $comment) {
                                             echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
 
@@ -131,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             echo '<small class="text-muted mr-3">' . htmlspecialchars($comment['comment_time']) . '</small>';
 
                                             // Delete button form
-                                            echo '<form method="post" action="">';
+                                            echo '<form method="post" action="gamerz_arena_players.php">';
                                             echo '<input type="hidden" name="delete_comment_id" value="' . htmlspecialchars($comment['id']) . '">';
                                             echo '<button type="submit" class="btn btn-danger btn-sm">Delete</button>';
                                             echo '</form>';
