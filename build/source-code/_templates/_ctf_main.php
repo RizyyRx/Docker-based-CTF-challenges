@@ -84,8 +84,8 @@
           <hr>
           <div class="row mb-3">
             <div class="col">
-              <h5 class="<?php echo Database::checkCompletionStatus('challenge_4') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
-                Challenge 4: <?php echo Database::checkCompletionStatus('challenge_4') ? 'Completed' : 'Not Completed'; ?>
+              <h5 class="<?php echo Database::checkCompletionStatus('insecure_file_upload') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
+                Challenge 4: <?php echo Database::checkCompletionStatus('insecure_file_upload') ? 'Completed' : 'Not Completed'; ?>
               </h5>
             </div>
           </div>
@@ -204,9 +204,10 @@
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
               <div class="card-body">
-                <p>Description about Challenge 4</p>
+                <p>why is it upload? why not loadup??</p>
+                <p>And also do you know who is called as the headshot machine of csgo??</p>
                 <form action="index.php" method="post">
-                  <input type="hidden" name="challenge_name" value="anything">
+                  <input type="hidden" name="challenge_name" value="insecure_file_upload">
                   <div class="form-group">
                     <label for="challenge4Flag">Enter Flag:</label>
                     <input type="text" class="form-control" id="challenge4Flag" name="flag" placeholder="CTF_ARENA{flag}">

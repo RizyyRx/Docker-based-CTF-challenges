@@ -21,6 +21,7 @@ TRUNCATE `flags`;
 INSERT INTO `flags` (`id`, `challenge_name`, `flag`, `completion_status`) VALUES
 (1,	'sql_injection',	'$2y$09$gaM9EXWos06ko/xSSaFKROd5N6AK7WYIHSau1ruuPaEswVJcpLefe',	0),
 (2,	'xss',	'$2y$09$G98BfZmHYD6Ek8jw1y.0Te4eI8i/8e99FBd9ybpL.mkzJjMjpJ36K',	0),
-(3,	'idor',	'$2y$09$FMh3o.OaQqovW.25jpp9CO..OQKjv7NT8.PYant4wPwWo1Ad/a6hy',	0);
+(3,	'idor',	'$2y$09$FMh3o.OaQqovW.25jpp9CO..OQKjv7NT8.PYant4wPwWo1Ad/a6hy',	0),
+(4,	'insecure_file_upload',	'$2y$09$pTo88xd7wsK6zuvNvb41O.fVyFoE.JXh1pmb1AiwF3q/ReEZmxfxa',	0);
 
--- 2024-07-18 14:05:44
+-- 2024-07-18 15:07:50
