@@ -1,0 +1,16 @@
+Chris Benjaminsen and Brian Meidell, veterans of the video game industry, 
+launched FRVR in 2014 intending to make games more accessible to anybody, 
+at any time, and anywhere. Over the years, FRVR has led the quest to
+democratize game distribution by removing barriers that gamers may face 
+when playing their favorite games.
+The idea behind FRVR AI is to make the game creation process accessible 
+and simple for anyone who wants to express their creativity, whether it’s 
+bringing a long-held vision to life or entering the game development field 
+to monetize this craft further.
+
+Getting started is extremely easy: users simply provide the AI model with a 
+brief description of the game they wish to create. After that, FRVR’s AI 
+engine develops the game’s basic structure, logic, and assets, making it 
+playable right away. Further users can refine the gameplay or visuals by 
+simply interacting with the tool through written instructions until they 
+are satisfied with the final result.

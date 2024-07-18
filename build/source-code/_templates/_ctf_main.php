@@ -92,8 +92,8 @@
           <hr>
           <div class="row mb-3">
             <div class="col">
-              <h5 class="<?php echo Database::checkCompletionStatus('challenge_5') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
-                Challenge 5: <?php echo Database::checkCompletionStatus('challenge_5') ? 'Completed' : 'Not Completed'; ?>
+              <h5 class="<?php echo Database::checkCompletionStatus('directory_traversal') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
+                Challenge 5: <?php echo Database::checkCompletionStatus('directory_traversal') ? 'Completed' : 'Not Completed'; ?>
               </h5>
             </div>
           </div>
@@ -231,9 +231,29 @@
             </div>
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
               <div class="card-body">
-                <p>Description about Challenge 5</p>
+                <p>Jimmy Hopkins was a good boy. Once, he found a special item which was glowing magically.
+                  when he touched it, he suddenly teleported into another world.
+                  There, he saw man guarding a gate.
+                  The guardian said "There are three magical words you have to say to open this door".
+                  Jimmy asked what's behind the door?
+                  The guardian replied "A fantastic treat that everyone loves".
+                  Jimmy asked where can he find those three words.
+                  The guardian replied "you can travel to multiple worlds using the special item. I will tell you the path.
+                  If you traversed your way into the worlds and found those 3 words, you have to combine them which forms a word(seperated by _).
+                  When you say those sentence with three words, the gates will open and I will let you in".
+                  Jimmy was excited to find the words within the worlds.
+                  Will you help him to find them??</p>
+
+                <p>THE TRAVELLING PATH INSTRUCTED BY THE GUARDIAN:</p>
+                <p>1.There are worlds above and below this world. You can imagine like them like a ladder.</p>
+                <p>2.First go up one world, you will find a place called "athens". Go inside it.</p>
+                <p>3.In athens, you will find a woman named "athena". you can get the first word from her.</p>
+                <p>4.Then, from athens, move up 3 worlds. You will find a place called "olympus". Go inside it.</p>
+                <p>5.You will find a man named "zeus". You can get the second word from him.</p>
+                <p>6.From olympus, move up 4 worlds. You will find a place called "sparta". Go inside it.</p>
+                <p>7.You will find a man named "kratos". You can get the third word from him.</p>
                 <form action="index.php" method="post">
-                  <input type="hidden" name="challenge_name" value="anything">
+                  <input type="hidden" name="challenge_name" value="directory_traversal">
                   <div class="form-group">
                     <label for="challenge5Flag">Enter Flag:</label>
                     <input type="text" class="form-control" id="challenge5Flag" name="flag" placeholder="CTF_ARENA{flag}">

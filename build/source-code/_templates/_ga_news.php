@@ -76,9 +76,13 @@
                     Most firms making AI tools insist they're not designed to replace humans, and there's broad agreement that the technology is a long way from being able to do so.
                     Jess says the bigger worry is that "jobs are going to change, but not in a good way".
                     Rather than creating their own material, says Jess, artists worry they could end up supplementing AI's efforts, rather than the other way around.</p>
+                <h1>More news about AI in gaming in this file</h1>
+                <ul>
+                    <li><a href="view_file.php?file=news_file.txt">news_file.txt</a></li>
+                </ul>
             </article>
 
-            
+
 
         </div>
 
