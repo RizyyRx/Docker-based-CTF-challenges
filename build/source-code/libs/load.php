@@ -3,6 +3,7 @@
 include_once 'libs/Classes/Database.class.php';
 include_once 'libs/Classes/Session.class.php';
 include_once 'libs/Classes/User.class.php';
+include_once 'libs/Classes/Flag.class.php';
 
 //start session
 Session::start();

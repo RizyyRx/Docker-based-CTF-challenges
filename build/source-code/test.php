@@ -1,4 +1,4 @@
 <?php
-print("hi");
-print_r($_SESSION);
+include "libs/load.php";
 ?>
+

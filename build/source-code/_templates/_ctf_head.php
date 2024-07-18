@@ -139,6 +139,25 @@
       align-items: center;
       justify-content: center;
     }
+
+    .dropdown-arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid white;
+      /* Adjust color as needed */
+      vertical-align: middle;
+      margin-left: 5px;
+      /* Adjust spacing */
+    }
+
+    .center-accordion {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 
   <!-- Custom styles for this template -->

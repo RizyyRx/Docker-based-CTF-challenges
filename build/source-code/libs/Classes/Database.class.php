@@ -263,4 +263,107 @@ class Database
             return false;
         }
     }
+
+    public static function setCompletionStatus($challenge_name)
+    {
+        try {
+            $conn = Database::getConnection();
+
+            // Prepare the SQL statement to update completion status
+            $sql = "UPDATE `flags` SET `completion_status` = '1' WHERE `challenge_name` = ?";
+
+            // Using prepared statements to prevent SQL injection
+            $stmt = $conn->prepare($sql);
+            if ($stmt === false) {
+                throw new Exception('Prepare failed: ' . $conn->error);
+            }
+
+            // Bind parameters and execute the statement
+            $stmt->bind_param("s", $challenge_name);
+            $stmt->execute();
+
+            // Check if the update was successful
+            if ($stmt->affected_rows > 0) {
+                return true; // Success
+            } else {
+                return false; // Failed to update (challenge name may not exist)
+            }
+        } catch (Exception $e) {
+            // Handle any exceptions (e.g., log, display error message, etc.)
+            error_log('Error in setCompletionStatus: ' . $e->getMessage());
+            throw new Exception('Failed to update completion status');
+        }
+    }
+
+    public static function checkCompletionStatus($challenge_name)
+    {
+        try {
+            $completion_status = null;
+            $conn = Database::getConnection();
+
+            // Prepare the SQL statement to select completion status
+            $sql = "SELECT `completion_status` FROM `flags` WHERE `challenge_name` = ?";
+
+            // Using prepared statements to prevent SQL injection
+            $stmt = $conn->prepare($sql);
+            if ($stmt === false) {
+                throw new Exception('Prepare failed: ' . $conn->error);
+            }
+
+            // Bind parameters and execute the statement
+            $stmt->bind_param("s", $challenge_name);
+            $stmt->execute();
+
+            // Bind result variables
+            $stmt->bind_result($completion_status);
+
+            // Fetch the result
+            $stmt->fetch();
+
+            // Check if completion status was fetched
+            if ($completion_status !== null) {
+                // Convert completion status to boolean
+                return ($completion_status == 1); // True if completion_status is 1, false otherwise
+            } else {
+                // No completion status found for the challenge name
+                return false;
+            }
+        } catch (Exception $e) {
+            // Handle any exceptions (e.g., log, display error message, etc.)
+            error_log('Error in checkCompletionStatus: ' . $e->getMessage());
+            throw new Exception('Failed to check completion status');
+        }
+    }
+    
+    public static function resetProgress()
+    {
+        try {
+            $conn = Database::getConnection();
+
+            // Prepare the SQL statement to update all completion statuses to 0
+            $sql = "UPDATE `flags` SET `completion_status` = 0";
+
+            // Using prepared statements to prevent SQL injection
+            $stmt = $conn->prepare($sql);
+            if ($stmt === false) {
+                throw new Exception('Prepare failed: ' . $conn->error);
+            }
+
+            // Execute the statement
+            $stmt->execute();
+
+            // Check if any rows were updated
+            $rowsAffected = $stmt->affected_rows;
+
+            // Close the statement
+            $stmt->close();
+
+            // Return true if at least one row was updated, otherwise false
+            return $rowsAffected > 0;
+        } catch (Exception $e) {
+            // Handle any exceptions (e.g., log, display error message, etc.)
+            error_log('Error in resetProgress: ' . $e->getMessage());
+            throw new Exception('Failed to reset progress');
+        }
+    }
 }

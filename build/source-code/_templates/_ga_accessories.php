@@ -19,29 +19,35 @@ if (isset($_POST['query'])) { ?>
 
             //query based on user input which is set on $_POST['query']
             $query_name = $_POST['query'];
-            $sql = "SELECT * FROM `products` WHERE `name` LIKE '%$query_name%'";
 
-            $result = $conn->query($sql);
 
-            //list all the matching results
-            if ($result->num_rows > 0) {
-                echo "<ul class='list-group' >";
-                // Output data of each row
-                while ($row = $result->fetch_assoc()) {
-                    echo "<li class='list-group-item mb-5 bg-dark text-white'>";
-                    echo "<div class='text-center' style='font-size: 1.5rem;'>" . $row["name"] . "</div><hr>";
-                    if (!empty($row["image_url"])) {
-                        echo "<div class='text-center mt-3'><img src='" . $row["image_url"] . "' alt='" . $row["name"] . "' style='max-width: 300px;'></div>";
-                    }
-                    echo "<hr>";
-                    echo "<div>Price: " . $row["price"] . "</div><hr>";
-                    echo "<div>Description: " . $row["description"] . "</div><hr>";
-                    echo "<div>Specifications: " . $row["specifications"] . "</div>";
-                    echo "</li>";
-                }
-                echo "</ul>";
+            if (empty($query_name) || trim($query_name) === '' || $query_name === "' '") {
+                echo "<p>Please enter a search term.</p>";
             } else {
-                echo "<p>No results found</p>";
+                $sql = "SELECT * FROM `products` WHERE `name` LIKE '%$query_name%'";
+
+                $result = $conn->query($sql);
+
+                //list all the matching results
+                if ($result->num_rows > 0) {
+                    echo "<ul class='list-group' >";
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<li class='list-group-item mb-5 bg-dark text-white'>";
+                        echo "<div class='text-center' style='font-size: 1.5rem;'>" . htmlspecialchars($row["name"]) . "</div><hr>";
+                        if (!empty($row["image_url"])) {
+                            echo "<div class='text-center mt-3'><img src='" . htmlspecialchars($row["image_url"]) . "' alt='" . htmlspecialchars($row["name"]) . "' style='max-width: 300px;'></div>";
+                        }
+                        echo "<hr>";
+                        echo "<div>Price: " . htmlspecialchars($row["price"]) . "</div><hr>";
+                        echo "<div>Description: " . htmlspecialchars($row["description"]) . "</div><hr>";
+                        echo "<div>Specifications: " . htmlspecialchars($row["specifications"]) . "</div>";
+                        echo "</li>";
+                    }
+                    echo "</ul>";
+                } else {
+                    echo "<p>No results found</p>";
+                }
             }
 
             $conn->close();
