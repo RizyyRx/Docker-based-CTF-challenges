@@ -9,9 +9,10 @@ include "libs/load.php";
 <body style="display: flex; flex-direction: column; min-height: 100vh;" class="bg-grey">
   <?php load_template("_DarkLightMode"); ?>
   <?php load_template("_ctf_header"); ?>
-
-  <?php load_template("_ctf_main"); ?>
-
+  <main>
+    <?php load_template("_ctf_main"); ?>
+    <?php load_template("_ctf_challenge_container"); ?>
+  </main>
   <?php load_template("_ctf_footer"); ?>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
