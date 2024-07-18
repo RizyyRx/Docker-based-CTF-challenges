@@ -76,8 +76,8 @@
           <hr>
           <div class="row mb-3">
             <div class="col">
-              <h5 class="<?php echo Database::checkCompletionStatus('challenge_3') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
-                Challenge 3: <?php echo Database::checkCompletionStatus('challenge_3') ? 'Completed' : 'Not Completed'; ?>
+              <h5 class="<?php echo Database::checkCompletionStatus('idor') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
+                Challenge 3: <?php echo Database::checkCompletionStatus('idor') ? 'Completed' : 'Not Completed'; ?>
               </h5>
             </div>
           </div>
@@ -178,9 +178,9 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
               <div class="card-body">
-                <p>Description about Challenge 3</p>
+                <p>How much authorization do you really have? Time to test it!!</p>
                 <form action="index.php" method="post">
-                  <input type="hidden" name="challenge_name" value="anything">
+                  <input type="hidden" name="challenge_name" value="idor">
                   <div class="form-group">
                     <label for="challenge3Flag">Enter Flag:</label>
                     <input type="text" class="form-control" id="challenge3Flag" name="flag" placeholder="CTF_ARENA{flag}">

@@ -1,4 +1,4 @@
--- Adminer 4.8.1 MySQL 8.3.0 dump
+-- Adminer 4.8.1 MySQL 9.0.0 dump
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
@@ -20,6 +20,7 @@ CREATE TABLE `flags` (
 TRUNCATE `flags`;
 INSERT INTO `flags` (`id`, `challenge_name`, `flag`, `completion_status`) VALUES
 (1,	'sql_injection',	'$2y$09$gaM9EXWos06ko/xSSaFKROd5N6AK7WYIHSau1ruuPaEswVJcpLefe',	0),
-(2,	'xss',	'$2y$09$G98BfZmHYD6Ek8jw1y.0Te4eI8i/8e99FBd9ybpL.mkzJjMjpJ36K',	0);
+(2,	'xss',	'$2y$09$G98BfZmHYD6Ek8jw1y.0Te4eI8i/8e99FBd9ybpL.mkzJjMjpJ36K',	0),
+(3,	'idor',	'$2y$09$FMh3o.OaQqovW.25jpp9CO..OQKjv7NT8.PYant4wPwWo1Ad/a6hy',	0);
 
--- 2024-07-18 09:54:28
+-- 2024-07-18 14:05:44

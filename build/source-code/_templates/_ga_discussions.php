@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                 } else {
                     // No file provided, save message without file path
-                    Database::saveMessage($username, $message,'');
+                    Database::saveMessage($username, $message, '');
 
                     // Redirect to avoid resubmission on page refresh
                     header('Location: ' . $_SERVER['PHP_SELF']);
@@ -138,17 +138,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     // Checks before deleting a comment
     if (isset($_POST['delete_comment_id'])) {
-        $id = $_POST['delete_comment_id'];
-        Database::deleteComment($id);
-        // Redirect to avoid resubmission on page refresh
-        header('Location: ' . $_SERVER['PHP_SELF']);
-        exit;
+        $comment_id = $_POST['delete_comment_id'];
+        $comment_row = Database::getCommentRow($comment_id);
+        if ($_SESSION['username'] == $comment_row['username']) {
+            Database::deleteComment($comment_id);
+            // Redirect to avoid resubmission on page refresh
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        } else {
+            Database::deleteComment($comment_id);
+            echo '
+    <div class="modal show" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="display: block; background: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Really?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Did you just delete other person comment?
+                    Here, this is your penality for the unforgivable act you have done without thinking.
+                    }?huh_553cc4_h5um_74h7_3v4h_u0y_05{ANERA_FTC
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>';
+        }
     }
 
     // Check if a discussion deletion request is submitted
     if (isset($_POST['delete_discussion'])) {
         $discussion_id = $_POST['delete_discussion'];
-        $discussion_row = Database::getDiscussionsRow($_SESSION['username']);
+        $discussion_row = Database::getDiscussionsRow($discussion_id);
 
         // Validate session or other authorization checks as needed
         if ($_SESSION['username'] == $discussion_row['username']) {

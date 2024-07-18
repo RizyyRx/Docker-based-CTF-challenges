@@ -93,7 +93,38 @@ class Database
         }
     }
 
+    public static function getCommentRow($comment_id)
+    {
+        try {
+            $conn = Database::getConnection();
 
+            // Prepare the SQL statement
+            $sql = "SELECT * FROM `comments` WHERE `id` = ?";
+            $stmt = $conn->prepare($sql);
+
+            if ($stmt === false) {
+                throw new Exception('Failed to prepare statement: ' . $conn->error);
+            }
+
+            // Bind the parameter
+            $stmt->bind_param('s', $comment_id);
+
+            // Execute the prepared statement
+            if (!$stmt->execute()) {
+                throw new Exception('Failed to execute statement: ' . $stmt->error);
+            }
+
+            // Get the result set
+            $result = $stmt->get_result();
+
+            // Fetch the first row into an associative array
+            return $result->fetch_assoc(); // Return only the first row
+        } catch (Exception $e) {
+            // Log any exceptions that occur
+            error_log("Exception caught: " . $e->getMessage());
+            return null;
+        }
+    }
 
     // Deletes a comment from DB using id
     public static function deleteComment($id)
@@ -168,13 +199,13 @@ class Database
         }
     }
 
-    public static function getDiscussionsRow($username)
+    public static function getDiscussionsRow($discussion_id)
     {
         try {
             $conn = Database::getConnection();
 
             // Prepare the SQL statement
-            $sql = "SELECT * FROM `discussions` WHERE `username` = ?";
+            $sql = "SELECT * FROM `discussions` WHERE `id` = ?";
             $stmt = $conn->prepare($sql);
 
             if ($stmt === false) {
@@ -182,7 +213,7 @@ class Database
             }
 
             // Bind the parameter
-            $stmt->bind_param('s', $username);
+            $stmt->bind_param('s', $discussion_id);
 
             // Execute the prepared statement
             if (!$stmt->execute()) {
@@ -334,7 +365,7 @@ class Database
             throw new Exception('Failed to check completion status');
         }
     }
-    
+
     public static function resetProgress()
     {
         try {

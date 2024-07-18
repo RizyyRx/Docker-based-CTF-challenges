@@ -35,11 +35,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Checks before deleting a comment
     if (isset($_POST['delete_comment_id'])) {
-        $id = $_POST['delete_comment_id'];
-        Database::deleteComment($id);
-        // Redirect to avoid resubmission on page refresh
-        header('Location: ' . $_SERVER['PHP_SELF']);
-        exit;
+        $comment_id = $_POST['delete_comment_id'];
+        $comment_row = Database::getCommentRow($comment_id);
+        if ($_SESSION['username'] == $comment_row['username']) {
+            Database::deleteComment($id);
+            // Redirect to avoid resubmission on page refresh
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        }
+        else {
+            echo '
+    <div class="modal show" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" style="display: block; background: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Unauthorized</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You are not authorized to delete this comment.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>';
+        }
     }
 }
 ?>
