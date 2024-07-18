@@ -223,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             echo '<strong>' . htmlspecialchars($comment['username']) . ':</strong> ';
 
                                             // Escape HTML and break comment into lines if it exceeds 30 characters per line
-                                            $commentContent = htmlspecialchars(wordwrap($comment['comment'], 30, "<br>\n", true));
+                                            $commentContent = wordwrap($comment['comment'], 30, "<br>\n", true);
                                             echo $commentContent;
 
                                             echo '</div>';

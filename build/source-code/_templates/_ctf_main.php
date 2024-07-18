@@ -68,8 +68,8 @@
           <hr>
           <div class="row mb-3">
             <div class="col">
-              <h5 class="<?php echo Database::checkCompletionStatus('challenge_2') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
-                Challenge 2: <?php echo Database::checkCompletionStatus('challenge_2') ? 'Completed' : 'Not Completed'; ?>
+              <h5 class="<?php echo Database::checkCompletionStatus('xss') ? 'bg-success text-white p-2 rounded' : 'bg-danger text-white p-2 rounded'; ?>">
+                Challenge 2: <?php echo Database::checkCompletionStatus('xss') ? 'Completed' : 'Not Completed'; ?>
               </h5>
             </div>
           </div>
@@ -152,9 +152,9 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
-                <p>Description about Challenge 2</p>
+                <p>Today is X-mas, not XSS</p>
                 <form action="index.php" method="post">
-                  <input type="hidden" name="challenge_name" value="anything">
+                  <input type="hidden" name="challenge_name" value="xss">
                   <div class="form-group">
                     <label for="challenge2Flag">Enter Flag:</label>
                     <input type="text" class="form-control" id="challenge2Flag" name="flag" placeholder="CTF_ARENA{flag}">

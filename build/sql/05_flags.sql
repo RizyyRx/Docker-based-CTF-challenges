@@ -19,6 +19,7 @@ CREATE TABLE `flags` (
 
 TRUNCATE `flags`;
 INSERT INTO `flags` (`id`, `challenge_name`, `flag`, `completion_status`) VALUES
-(1,	'sql_injection',	'$2y$09$gaM9EXWos06ko/xSSaFKROd5N6AK7WYIHSau1ruuPaEswVJcpLefe',	0);
+(1,	'sql_injection',	'$2y$09$gaM9EXWos06ko/xSSaFKROd5N6AK7WYIHSau1ruuPaEswVJcpLefe',	0),
+(2,	'xss',	'$2y$09$G98BfZmHYD6Ek8jw1y.0Te4eI8i/8e99FBd9ybpL.mkzJjMjpJ36K',	0);
 
--- 2024-07-17 19:08:50
+-- 2024-07-18 09:54:28
