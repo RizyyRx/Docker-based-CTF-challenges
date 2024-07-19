@@ -41,3 +41,5 @@ https://github.com/RizyyRx/Docker-based-CTF-challenges
 * You will be presented with CTF Arena website.
 * You can see challenges, hints and a button to visit the vulnerable website
 * There you have to find the vulnerabilities and sumbit the flags on CTF Arena website
+## Link to a Video guide for this setup
+https://drive.google.com/file/d/1KaRx_RGUl0vQ6AetEBDX_F12hVrNpoes/view?usp=sharing
